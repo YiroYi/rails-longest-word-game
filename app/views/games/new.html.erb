@@ -1,0 +1,16 @@
+<div class=".container">
+  <h1>New Game</h1>
+  <h3>Your deck for this round is</h3>
+  <div class="letter-container">
+    <% @deck.each do |letter| %>
+    <div><%= letter %></div>
+  <% end %>
+  </div>
+  <form action="/score" method="POST">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag 'deck', @deck %>
+    <input type="hidden" id='deck'>
+    <input type="text" name="word">
+    <input type="submit" value="Game!">
+  </form>
+</div>
