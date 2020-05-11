@@ -1,6 +1,6 @@
 <div class=".container">
-  <h1>New Game</h1>
-  <h3>Your deck for this round is</h3>
+  <h1>NEW GAME</h1>
+  <h3>Your deck for this round is:</h3>
   <div class="letter-container">
     <% @deck.each do |letter| %>
     <div><%= letter %></div>
@@ -10,7 +10,7 @@
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <%= hidden_field_tag 'deck', @deck %>
     <input type="hidden" id='deck'>
-    <input type="text" name="word">
-    <input type="submit" value="Game!">
+    <input type="text" name="word" class="input-letter">
+    <input type="submit" value="Game!" class="btn">
   </form>
 </div>
